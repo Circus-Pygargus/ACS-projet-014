@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!--    <link rel="icon" type="image/png" href="Assets/Images/favicon.png" /> -->
+    <meta charset="utf-8">
+    <!-- taille de la fenêtre -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio | Richard | Développeur web et web mobile</title>
+    <meta name="author" content="Richard Meuret">
+    <meta name="author" content="Richard AKA Circus Pygargus">
+    <meta name="description" content="quelques infos sur ma vie">
+    <!-- Meta facebook, Google+, Linkedin -->
+    <meta property="og:url" content="Riri's life.fr" />
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio | Richard | Développeur web et web mobile" />
+    <meta property="og:description" content="quelques infos sur ma vie" />
+    <meta property="og:image" content="fav.png" />
+    <!-- Meta twitter -->
+    <meta name="twitter:card" content="summary" /> <!-- la taille de la boite d'affichage-->
+    <meta name=”twitter:creator” content="richard.meuret@laposte.net" />
+    <meta name="twitter:site" content="monsite" />
+    <meta name="twitter:url" content="Riri's life.fr" />
+    <meta name="twitter:title" content="Portfolio | Richard | Développeur web et web mobile" />
+    <meta name="twitter:description" content="quelques infos sur ma vie">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <!-- fichiers inclus -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-dark">
+        <div class="width_content">
+            <h1 class="center">Portfolio</h1>
+            <div class="conteneur_nom_photo">
+                <img id="ma_photo" src="assets/img/ma_photo_fb.jpg" alt="photo de Richard Meuret" height="540"
+                    width="720" title="Il a des cheveux ;) Robins">
+                <h2 id="mon_nom">Richard MEURET</h2>
+            </div>
+            <p id="aka" class="center">AKA</p>
+            <div class="conteneur_nom_photo">
+                <h2 id="mon_pseudo">Circus Pygargus</h2>
+                <video id="video_busard" src="assets/vid/busard.webm" type="video/webm" autoplay loop>Change ton
+                    navigateur !!</video>
+            </div>
+            <!-- <nav>
+            <ul>
+                <li id="nav-realisations"><a id="nav-1er_lien" href="#section_mes_realisations">Réalisations</a></li>
+                <li id="nav-ma_vie"><a href="#section_ma_vie">Parcours</a></li>
+                <li id="nav-hobbies"><a href="#section_hobbies">Hobbies</a></li>
+            </ul>
+        </nav> -->
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Ma vie -->
+        <section id="section_ma_vie" class="bg-light">
+            <div class="width_content">
+                <h3>Ma life</h3>
+                <p>Mon parcours professionnel n'a, jusqu'ici, aucun rapport avec l'informatique :</p>
+                <ul>
+                    <li>- chauffeur routier (1 an)</li>
+                    <li>- gérant d'une salle de billard (2 ans)</li>
+                    <li>- artiste peintre en bâtiment spécialité monochrome grandes surfaces (15 ans)</li>
+                    <li>- opérateur sur commandes numériques en industrie (2 ans)</li>
+                </ul>
+                <p>
+                    Fan d'informatique, j'ai découvert les joies du code il y a 6 ou 7 ans;<br>
+                    J'ai d'abord commencé par modifier quelques plugins php pour mon jeu préféré (ManiaPlanet AKA
+                    Trackmania),
+                    avant d'être capable de créer les miens.
+                </p>
+                <p>
+                    Je me suis ensuite penché sur le développement web (HTML, CSS, PHP et javascript), afin d'aider mes
+                    enfants à présenter certains de leur travaux.
+                    Puis j'ai profité de ce support pour créer et partager des outils pour la communauté de joueurs de
+                    ManiaPlanet.
+                </p>
+                <p>
+                    Depuis un peu plus de trois ans, je m'intéresse beaucoup plus à Unity,
+                    logiciel permettant de créer des jeux vidéos pour tout type de support (PC, Mac, Iphone, Android,
+                    toutes les consoles de jeux ...).<br>
+                    Mes réalisations y sont peu nombreuses: quelques jeux issus de tutos,
+                    ainsi que plusieurs applis Android dont une qui m'a été d'une grande aide lorsque je travaillais
+                    dans
+                    l'usinage.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Mes réalisations -->
+        <section id="section_mes_realisations" class="bg-dark">
+            <div class="width_content">
+                <div id="projects_filters_bar">
+                    <h3>Réalisations</h3>
+                    <div id="projects_filters">
+                        <!-- <div class="projects_filter" id="proj_filter_all">
+                            <label>
+                                <input type="radio" name="filter"/>
+                                <span>Toutes</span>
+                            </label>
+                        </div>
+                        <div class="projects_filter">
+                            <label>
+                                <input type="radio" name="filter"/>
+                                <span>Exercices</span>
+                            </label>
+                        </div>
+                        <div class="projects_filter">
+                            <label>
+                                <input type="radio" name="filter"/>
+                                <span>Sites</span>
+                            </label>
+                        </div>
+                        <div class="projects_filter">
+                            <label>
+                                <input type="radio" name="filter"/>
+                                <span>Intégrations</span>
+                            </label>
+                        </div>
+                        <div class="projects_filter">
+                            <label>
+                                <input type="radio" name="filter"/>
+                                <span>En groupe</span>
+                            </label>
+                        </div> -->
+                        <span id="toutes" class="projects_filter thin_underline">Toutes</span>
+                        <span id="exercice" class="projects_filter">Exercices</span>
+                        <span id="site" class="projects_filter">Sites</span>
+                        <span id="integration" class="projects_filter">Intégrations</span>
+                        <span id="group" class="projects_filter">En groupe</span>
+                    </div>
+                </div>
+                <div class="projects_box">
+                    <img id="project_1_miniature" class="toutes exercice" title="Logo ACS sous Photoshop"
+                        src="../../../Projet 001_logo_acs_toshop_et_illustrator/Logo-ACS_toshop_fondTransparent.png"
+                        alt="Logo ACS" width="454" height="340">
+                    <a class="project_link toutes site" id="link_proj_002" title="Portfolio HTML"
+                        href="../../../projet_002_portfolio_html/1ercode.html" target="_blank"></a>
+                    <a class="project_link toutes site group" id="link_proj_003" title="Lexique HTML"
+                        href="../../../Projet_003_Lexique_html/index.html" target="_blank"></a>
+                    <a class="project_link toutes site" id="link_proj_004" title="Portfolio HTML css"
+                        href="../../../Projet_004_portfolio_css/index.html" target="_blank"></a>
+                    <a class="project_link toutes exercice" id="link_proj_005" title="Logo ACS HTML css"
+                        href="../../../projet_005_logo_ACS_en_HTML_et_CSS/index.html" target="_blank"></a>
+                    <!-- <a class="project_link toutes site group" id="link_proj_006" title="Lexique HTML css"
+                        href="../../../projet_006_lexique_html_et_css/index.html" target="_blank"></a> -->
+                    <a class="project_link toutes integration" id="link_proj_007" title="Intégration site John Doe"
+                        href="../../../projet_007_site_selon_maquette_max_2_mo/index.html" target="_blank"></a>
+                    <a class="project_link toutes integration" id="link_proj_008" title="Intégration site restaurant"
+                        href="../../../projet_008_site_selon_maquette_restaurant_max_3_mo/ACS-projet-008/index.html"
+                        target="_blank"></a>
+                    <a class="project_link toutes exercice" id="link_proj_009" title="Exercices js"
+                        href="../../../virtual_machine/projet_009_exercices/projet/index.html" target="_blank"></a>
+                    <a class="project_link toutes exercice" id="link_proj_010" title="Formulaire js"
+                        href="../../../virtual_machine/projet_010_formulaire_avec_js/app/index.html"
+                        target="_blank"></a>
+                    <a class="project_link toutes integration" id="link_proj_011" title="Intégration site Blueasy"
+                        href="../../../virtual_machine/projet_011_maquette_blueasy/app/index.html" target="_blank"></a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Mes hobbies -->
+        <section id="section_hobbies" class="bg-light">
+            <div class="width_content">
+                <h3>Passion</h3>
+                <div class="container_videos">
+                    <div class="container_vid">
+                        <span class="vid_subtitle">billard 8 pool</span>
+                        <div id="video_blackPool" title="Billard 8Pool"></div>
+                    </div>
+                </div>
+                <h3>Hobbies</h3>
+                <div class="container_videos">
+                    <div class="container_vid">
+                        <span class="vid_subtitle">ManiaPlanet</span>
+                        <div id="video_maniaPlanet"></div>
+                    </div>
+                    <div class="container_vid">
+                        <span class="vid_subtitle">Rocket League</span>
+                        <div id="video_rocketLeague"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- section contact -->
+        <section id="section_contact" class="bg-dark">
+            <div class="width_content">
+                <h3>Contact</h3>
+                <form id="myForm" novalidate>
+                    <div class="form_group">
+                        <label class="form_label" for="nom">
+                            Nom
+                            <span class="msg-error">
+                                <span>Erreur</span>
+                                Cette étape est obligatoire
+                            </span>
+                        </label>
+                        <input type="text" id="nom" name="nom" required class="form_control">
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label" for="adresse">
+                            Adresse
+                            <span class="msg-error">
+                                <span>Erreur</span>
+                                Cette étape est obligatoire
+                            </span>
+                        </label>
+                        <input type="text" id="adresse" name="adresse" required class="form_control">
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label" for="mail">
+                            Email
+                            <span class="msg-error">
+                                <span>Erreur</span>
+                                Cette étape est obligatoire
+                            </span>
+                        </label>
+                        <input type="text" id="mail" name="mail" required class="form_control">
+                    </div>
+                    <div class="form_group">
+                        <label class="form_label" for="message">
+                            Message
+                            <span class="msg-error">
+                                <span>Erreur</span>
+                                Cette étape est obligatoire
+                            </span>
+                        </label>
+                        <textarea type="text" id="message" name="message" required class="form_control"></textarea>
+                    </div>
+                    <button id="form_btn" type="submit">Envoyer</button> 
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Comment me joindre -->
+    <!-- <footer class="bg-dark">
+        <div class="width_content">
+            <h3>Contact</h3>
+            <div id="joinMe">
+                <a id="mailMe" href="mailto:richard.meuret@laposte.net">Ecrivez moi</a>
+                <a href="https://www.facebook.com/richard.meuret" target="_blank">
+                    <img class="logo_reseaux_sociaux" src="assets/img/logo_facebook.jpg" alt="Logo Facebook"
+                        height="178" width="474">
+                </a>
+                <a href="https://www.linkedin.com/in/richard-meuret-535835182/" target="_blank">
+                    <img class="logo_reseaux_sociaux" src="assets/img/logo_linkedIn.jpg" alt="Logo LinkedIn"
+                        height="237" width="474">
+                </a>
+            </div>
+        </div>
+    </footer> -->
+
+
+
+    <script async src="https://www.youtube.com/iframe_api"></script>
+    <script src="assets/js/yt_vid_player.js"></script>
+    <script src="assets/js/projects_filter.js"></script>
+    <script src="assets/js/form.js"></script>
+</body>
+
+</html>
