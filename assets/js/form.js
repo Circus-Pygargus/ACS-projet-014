@@ -58,10 +58,11 @@ form.addEventListener('submit', function () {
     xhr.open('POST', 'assets/php/testAndSendForm.php');
     var data = new FormData();
     data.append('nom', document.querySelector('#nom').value);
-    data.append('adresse', document.querySelector('#adresse').value);
+    //data.append('adresse', document.querySelector('#adresse').value); // pas d'adresse dans l'exercice ...
     data.append('mail', document.querySelector('#mail').value);
     data.append('message', document.querySelector('#message').value);
     xhr.onload = function () {
+      // affiche le echo renvoyé par testAndSendForm.php
       console.log(this.responseText);
     }
     xhr.send(data);
