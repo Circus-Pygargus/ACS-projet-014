@@ -76,6 +76,13 @@ h3 {
     display: inline-block;
 }
 
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
 
 
 /* header */
@@ -332,6 +339,10 @@ span.thin_underline {
 #form_btn:hover {
     color: #999999;
 }
+/* #backMessage {
+    display: none;
+    color: #00e600;
+} */
 .msg-error {
     display: none;
     color: red;

@@ -1,5 +1,11 @@
 /* ######################## variables ##################### */
+// le formulaire
 var form = document.querySelector('#myForm');
+// les emplacements prévu pour afficher les messages d'erreurs
+var errNom = document.querySelector('label[for="nom"] span.msg-error');
+var errMail = document.querySelector('label[for="mail"] span.msg-error');
+var errMessage = document.querySelector('label[for="message"] span.msg-error');
+var backMessage = document.querySelector('#backMessage');
 
 
 
@@ -64,10 +70,79 @@ form.addEventListener('submit', function () {
     xhr.onload = function () {
       // affiche le echo renvoyé par testAndSendForm.php
       console.log(this.responseText);
+      // appelle la fonction qui réagira selon la réponse renvoyée par le php
+      reactAccordingToAnswer(this.response); 
     }
     xhr.send(data);
   }
 });
+
+
+/* ####################### functions ######################## */
+
+/* traite la réponse du php et réagit en fonction.
+    arg : la réponse renvoyée par php (type string) */
+function reactAccordingToAnswer (_answer) {
+  var counter = 0;
+  errNom.classList.remove('msg-error--show');
+  errMail.classList.remove('msg-error--show');
+  errMessage.classList.remove('msg-error--show');
+
+  // switch (_answer) {
+  //   case "[nom]": 
+  //     errNom.classList.add('msg-error--show');
+  //     errNom.innerHTML = "Ce nom ne semnble pas valide.";
+  //     break;
+  //   case "[mail]":
+  //     errMail.classList.add('msg-error--show');
+  //     errMail.innerHTML = "Cette adresse email ne semnble pas valide.";
+  //     break;
+  //   case "[message]":
+  //     errMessage.classList.add('msg-error--show');
+  //     errMessage.innerHTML = "Ce message ne semnble pas valide.";
+  //     break;
+  //   case "ok":
+  //     backMessage.innerHTML = "Votre message a bien été envoyé";
+  //     break;
+  // }
+
+  if (/(\[nom\])/.test(_answer)) {
+    counter++;
+    errNom.classList.add('msg-error--show');
+    errNom.innerHTML = "Ce nom ne semnble pas valide.";
+  }
+  if (/(\[mail\])/.test(_answer)) {
+    counter++;
+    errMail.classList.add('msg-error--show');
+    errMail.innerHTML = "Cette adresse email ne semnble pas valide.";
+  }
+  if (/(\[message\])/.test(_answer)){
+    counter++;
+    errMessage.classList.add('msg-error--show');
+    errMessage.innerHTML = "Ce message ne semnble pas valide.";
+  }
+  if (/(\[ok\])/.test(_answer)) {
+    counter++;
+    // backMessage.style.display = "inline-block";
+    // backMessage.style.color = "green";
+    backMessage.classList.remove('hide');
+    backMessage.classList.remove('red');
+    backMessage.classList.add('green');
+    backMessage.classList.add('show');
+    backMessage.innerHTML = "Votre message a bien été envoyé";
+  }
+  if (counter === 0) {    
+    // backMessage.style.display = "inline-block";
+    // backMessage.style.color = "red";
+    backMessage.classList.remove('hide');
+    backMessage.classList.remove('green');
+    backMessage.classList.add('red');
+    backMessage.classList.add('show');
+    backMessage.innerHTML = _answer;
+  }
+}
+
+
 
 /* ################## tests ################## */
 // postForm('http://localhost:8080/')

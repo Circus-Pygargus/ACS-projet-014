@@ -1,8 +1,6 @@
 <?php
 
 /* ################## variables #################### */
-// le message de retour du POST
-$backMessage ="";
 // les champs du formulaire
 $nom = htmlspecialchars($_POST['nom']);
 //$adresse = htmlspecialchars($_POST['adresse']); // pas besoin de l'adresse dans l'exo
@@ -15,28 +13,34 @@ $regEx_mail = "/^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[
 $regEx_message = "/.{3,}\s?/";
 // un compteur pour être sûr que tout va bien
 $errCounter = 0;
+// le message de retour du POST
+$backMessage ="";
+
+
 
 /* ################ tests des champs du formulaire ##################### */
 // tests des champs avec les regEx
 if (isset($nom)
       && !preg_match($regEx_nom, $nom)) {
   $errCounter++;
+  $backMessage .= "[nom]";
 }
 if (isset($nom)
       && !preg_match($regEx_mail, $mail)) {
   $errCounter++;
+  $backMessage .= "[mail]";
 }
 if (isset($nom)
       && !preg_match($regEx_message, $message)) {
   $errCounter++;
+  $backMessage .= "[message]";
 }
 
-echo "nbr erreurs : " . $errCounter . "<br>";
 
 
 // Erreurs présentes dans le formulaire, on envoie un message donnant la ou les erreurs
 if ($errCounter !== 0) {
-
+  echo $backMessage;
 }
 // tout va bien, on envoie le contenu du formulaire par mail et on affiche la confirmation sur la page web
 else {
@@ -64,14 +68,16 @@ function sendMail() {
 
   // on envoie le mail et on vérifie en même temps qu'il est bien parti
   if (mail($destinataire, $sujet, $mailMessage, $headers)) {
-    echo "L'email est bien envoyé <br>";
-    echo "nom: " . $nom . "<br>
-          mail : " . $mail . "<br>
-          message : " .$message . "<br>";
+    $backMessage = "[ok]";
+    // echo "nom: " . $nom . "<br>
+    //       mail : " . $mail . "<br>
+    //       message : " .$message . "<br>";
   }
   else {
-    echo "Une erreur s'est produite lors de l'envoi de l'email.";
+    $backMessage = "Une erreur s'est produite lors de l'envoi de l'email.";
   }
 
+  // retour du message
+  echo $backMessage;
 }
 ?>

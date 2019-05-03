@@ -209,7 +209,7 @@
                         </label>
                         <input type="text" id="nom" name="nom" required class="form_control">
                     </div>
-                    <div class="form_group">
+                    <!-- <div class="form_group">
                         <label class="form_label" for="adresse">
                             Adresse
                             <span class="msg-error">
@@ -218,7 +218,7 @@
                             </span>
                         </label>
                         <input type="text" id="adresse" name="adresse" required class="form_control">
-                    </div>
+                    </div> -->
                     <div class="form_group">
                         <label class="form_label" for="mail">
                             Email
@@ -239,7 +239,10 @@
                         </label>
                         <textarea type="text" id="message" name="message" required class="form_control"></textarea>
                     </div>
-                    <button id="form_btn" type="submit">Envoyer</button> 
+                    <div>
+                        <button id="form_btn" type="submit">Envoyer</button> 
+                        <span id="backMessage" class="hide"></span>
+                    </div>
                 </form>
             </div>
         </section>
